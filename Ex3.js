@@ -1,10 +1,10 @@
-let palavra = prompt("Digite uma palavra");;
+let palavra = prompt("Digite uma palavra");
 let qLetras = palavra.length - 1;
 let iguais = true;
 
 let j = qLetras;
 for(let i = 0; i < qLetras; i++){
-    if(palavra.charAt(i) !== palavra.charAt(j)){
+    if(palavra.toLowerCase().charAt(i) !== palavra.toLowerCase().charAt(j)){
         iguais = false;
     }
     j--;
