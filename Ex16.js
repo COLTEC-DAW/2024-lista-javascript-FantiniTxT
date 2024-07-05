@@ -1,9 +1,7 @@
 function construtorMatriz(matriz, condicao) {
-    console.log(matriz);
     for (let i = 0; i < matriz.length; i++) {
         for (let j = 0; j < matriz[0].length; j++) {
             matriz[i][j] = condicao(i, j);
-            console.log(matriz);
         } 
     }
     return matriz;
@@ -29,7 +27,13 @@ function comparaIncrementadoIndices(i, j){
     return i > j ? 1 : (i < j ? 5 : 0);
 }
 
-let matriz = Array(5).fill(Array(5));
+let linhas = Number(prompt("Quantidade de linhas"));
+let colunas = Number(prompt("Quantidade de colunas"));
+
+let matriz = new Array(linhas);
+for (let i = 0; i < matriz.length; i++) {
+    matriz[i] = new Array(colunas);
+}
 
 console.log(construtorMatriz(matriz, somaIndices));
 console.log(construtorMatriz(matriz, multiplicaIndices));
