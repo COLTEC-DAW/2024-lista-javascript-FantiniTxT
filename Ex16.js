@@ -1,7 +1,9 @@
-function construtorMatriz(matriz, condicao) {
+function construtorMatriz(linhas, colunas, metodo) {
+    let matriz = new Array(linhas).fill().map(()=> new Array(colunas));
+    
     for (let i = 0; i < matriz.length; i++) {
         for (let j = 0; j < matriz[0].length; j++) {
-            matriz[i][j] = condicao(i, j);
+            matriz[i][j] = metodo(i, j);
         } 
     }
     return matriz;
@@ -27,16 +29,17 @@ function comparaIncrementadoIndices(i, j){
     return i > j ? 1 : (i < j ? 5 : 0);
 }
 
+
 let linhas = Number(prompt("Quantidade de linhas"));
 let colunas = Number(prompt("Quantidade de colunas"));
 
-let matriz = new Array(linhas);
-for (let i = 0; i < matriz.length; i++) {
-    matriz[i] = new Array(colunas);
-}
-
-console.log(construtorMatriz(matriz, somaIndices));
-console.log(construtorMatriz(matriz, multiplicaIndices));
-console.log(construtorMatriz(matriz, comparaIndices));
-console.log(construtorMatriz(matriz, calculaIndices));
-console.log(construtorMatriz(matriz, comparaIncrementadoIndices));
+console.log("Soma indices");
+console.log(construtorMatriz(linhas, colunas, somaIndices));
+console.log("Multiplica indices");
+console.log(construtorMatriz(linhas, colunas, multiplicaIndices));
+console.log("Compara indices");
+console.log(construtorMatriz(linhas, colunas, comparaIndices));
+console.log("Calcula indices");
+console.log(construtorMatriz(linhas, colunas, calculaIndices));
+console.log("Compara incrementado indices");
+console.log(construtorMatriz(linhas, colunas, comparaIncrementadoIndices));
