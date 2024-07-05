@@ -35,4 +35,4 @@ console.log(construtorMatriz(matriz, somaIndices));
 console.log(construtorMatriz(matriz, multiplicaIndices));
 console.log(construtorMatriz(matriz, comparaIndices));
 console.log(construtorMatriz(matriz, calculaIndices));
-console.log(construtorMatriz(matriz, comparaIncrementadoIndices));*/
+console.log(construtorMatriz(matriz, comparaIncrementadoIndices));
